@@ -1,0 +1,218 @@
+Christian Union Music Ministry Digital System
+Final Design Decisions (Pre-Implementation)
+
+============================================
+1. OVERALL SYSTEM STRUCTURE
+============================================
+
+The system will consist of TWO MAIN DASHBOARDS:
+
+1. Main Dashboard (Operational)
+2. Analytics Dashboard (Insights & Decision Support)
+
+Navigation between dashboards will be handled using a SIMPLE HAMBURGER MENU,
+designed primarily for mobile use, with minimal menu items.
+
+Menu Items:
+- Main Dashboard
+- Analytics Dashboard
+(Optional future: Members – admin only)
+
+The goal is to keep daily usage simple for non-technical users while allowing
+leaders to access insights separately.
+
+--------------------------------------------
+
+============================================
+2. MAIN DASHBOARD (PRIMARY USER AREA)
+============================================
+
+Purpose:
+- Used weekly by the secretary
+- Optimized for speed, clarity, and simplicity
+- No charts or heavy analytics
+
+Main Dashboard Components:
+
+1. Top Information Section
+- Current date (auto-generated)
+- Semester progress:
+  - Current week number
+  - Number of weeks remaining
+
+2. Primary Action
+- A single prominent button:
+  “Record Service”
+
+This is the main interaction point and should visually stand out.
+
+3. Recent Ministry Records
+- Cards displaying services from the PAST TWO WEEKS only
+- Maximum of 4 cards (Saturday & Sunday)
+- Each card shows:
+  - Date
+  - Service type (Saturday / Sunday)
+  - Lead ministers
+  - Backup ministers
+
+Purpose:
+- Quick confirmation that records were saved correctly
+- Easy reference without entering analytics
+- Reduces confusion and repeated questions
+
+--------------------------------------------
+
+============================================
+3. RECORD SERVICE WORKFLOW
+============================================
+
+This workflow must remain calm, linear, and forgiving.
+
+STEP 1: Select Service Details
+- Date picker (defaults to today)
+- Service type: Saturday or Sunday
+
+STEP 2: Select Voice Group
+- Voice groups shown as tabs or buttons:
+  - Alto
+  - Tenor
+  - Soprano
+- Only ONE voice group visible at a time
+
+STEP 3: Select Ministers
+- Ministers displayed as a checklist
+- Each minister shows a SMALL color indicator:
+  - Red: Has not ministered in the last 3 weeks
+  - Neutral/Gray: Normal participation
+  - Yellow (optional): Recently used frequently
+
+Colors are subtle and supported by tooltips.
+No user must memorize color meanings.
+
+STEP 4: Lead / Backup Assignment
+- Lead/Backup selection appears ONLY after a minister is checked
+- Simple toggle per selected minister
+- Default can be Backup to reduce pressure
+
+STEP 5: Undo & Error Prevention
+- Unchecking a minister reverses all selections
+- Ministers selected in one voice are disabled in others
+- Prevents duplicate selection silently
+
+STEP 6: Save & Confirm
+- Save action records service
+- User is returned to main dashboard
+- Recent service card appears immediately
+
+--------------------------------------------
+
+============================================
+4. HANDLING MULTI-VOICE MINISTERS
+============================================
+
+- A minister may belong to multiple voice groups
+- A minister may be selected ONLY ONCE per service
+- If selected under one voice:
+  - Disabled in other voice tabs
+  - Labeled “Already selected”
+
+This avoids confusion without extra warnings.
+
+--------------------------------------------
+
+============================================
+5. ANALYTICS DASHBOARD
+============================================
+
+Purpose:
+- Used by leaders and coordinators
+- Focused on insights, fairness, and planning
+- No data entry here
+
+Analytics Dashboard Sections:
+
+1. Overview Cards (Top)
+- Total services this semester
+- Number of active ministers
+- Average ministers per service
+- Gender ratio
+
+2. Performance Ranking Chart
+- Horizontal Bar Chart
+- Sorted from highest to lowest
+- Filter options:
+  - All
+  - Ladies
+  - Gents
+- Scrollable for large datasets (e.g. 50 ministers)
+
+3. Gender Participation Chart
+- Donut or Pie Chart
+- Visual overview of gender balance
+
+4. Weekly Participation Trend
+- Line Chart
+- X-axis: Weeks
+- Y-axis: Number of ministers per service
+- Used to identify trends over the semester
+
+5. Fairness / Distribution Check (Optional)
+- Histogram or bar chart
+- Shows distribution of ministry frequency
+- Helps prevent burnout and neglect
+
+--------------------------------------------
+
+============================================
+6. RESPONSIVENESS & UX PRINCIPLES
+============================================
+
+- Mobile-first design
+- Vertical scrolling preferred over cramped layouts
+- One chart per row on mobile
+- Grid layout on md+ screens
+- Charts are responsive using container-based sizing
+
+Secretary View:
+- No charts
+- No analytics
+- Simple forms only
+
+Leader View:
+- Visual summaries
+- Filters instead of raw tables
+
+--------------------------------------------
+
+============================================
+7. CORE DESIGN PRINCIPLES (NON-NEGOTIABLE)
+============================================
+
+- Simplicity over cleverness
+- Progressive disclosure (one decision at a time)
+- Visual cues instead of numbers
+- Automation supports people, not replaces them
+- Fairness without competition
+- Power underneath, calm on the surface
+
+--------------------------------------------
+
+============================================
+8. MVP BOUNDARY (SCOPE LOCK)
+============================================
+
+IN SCOPE:
+- Main Dashboard
+- Record Service workflow
+- Recent service cards
+- Analytics dashboard with core charts
+
+OUT OF SCOPE (FOR NOW):
+- Automatic messaging
+- Advanced permissions
+- AI recommendations
+- Overly detailed reports
+
+These may be revisited after feedback.
+
+--------------------------------------------
