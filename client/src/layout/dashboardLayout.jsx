@@ -9,7 +9,7 @@ export default function DashboardLayout() {
     return (
         // 1. Lock the entire layout to the viewport height (h-screen) 
         // and hide the browser's default scrollbar (overflow-hidden)
-        <div className="flex h-screen w-full bg-gray-500 overflow-hidden">
+        <div className="flex h-screen w-full bg-gray-300 overflow-hidden">
             
             {/* Desktop Sidebar 
                 - We remove 'bg-gray-500' here because the Sidebar component 
