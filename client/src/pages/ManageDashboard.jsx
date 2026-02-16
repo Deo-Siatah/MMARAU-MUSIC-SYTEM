@@ -16,7 +16,7 @@ export default function ManageDashboard() {
     ];
 
     return (
-        <div className="min-h-screen bg-gray-100 flex flex-col">
+        <div className="min-h-screen bg-gray-200 flex flex-col">
             {/*header*/}
             <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">

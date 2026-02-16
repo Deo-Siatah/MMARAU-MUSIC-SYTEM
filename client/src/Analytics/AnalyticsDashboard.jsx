@@ -143,7 +143,7 @@ export default function AnalyticsTab() {
       : rankingData;
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-200">
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <KPICard title="Total Ministers" value={totals} icon={Users} color="bg-gray-900" />
