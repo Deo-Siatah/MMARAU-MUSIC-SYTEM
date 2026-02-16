@@ -36,8 +36,6 @@ app.use(cors({
     },
     credentials: true
 }))
-//cors
-
 //routes
 app.get("/",(req,res) => {res.send("Welcome to MM API")});
 app.use("/api/v1/service", require("./routes/serviceRoutes"));
