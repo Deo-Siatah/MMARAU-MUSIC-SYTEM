@@ -143,6 +143,7 @@ export default function AnalyticsTab() {
       : rankingData;
 
   return (
+    <div className="bg-gray-100">
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <KPICard title="Total Ministers" value={totals} icon={Users} color="bg-gray-900" />
@@ -361,6 +362,7 @@ export default function AnalyticsTab() {
               </div>
             </div>
           )}
+          </div>
         </div>
       </div>
     </div>
@@ -411,8 +413,10 @@ function GenderList({ title, data, color, bgColor, max }) {
         <p className="text-[8px] font-black text-gray-400 uppercase tracking-[0.2em]">Scroll to view all</p>
       </div>
     </div>
+    
   );
 }
+
 // --- OTHER SHARED COMPONENTS ---
 
 function KPICard({ title, value, icon: Icon, color }) {
